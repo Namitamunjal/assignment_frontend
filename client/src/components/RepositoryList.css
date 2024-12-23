@@ -1,0 +1,135 @@
+/* Container Styles */
+.repository-list-container {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 0.375rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  font-family: 'Inter', sans-serif;
+
+}
+
+/* Title and Count */
+.repository-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.repository-count {
+  font-size: 0.875rem;
+  color: #6b7280; /* Tailwind gray-500 */
+  margin-bottom: 1rem;
+}
+
+/* Search Input */
+.repository-search {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #d1d5db; /* Tailwind gray-300 */
+  border-radius: 0.375rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Repository List */
+.repository-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Repository Item */
+.repository-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #f9fafb; /* Tailwind gray-50 */
+  border: 1px solid #e5e7eb; /* Tailwind gray-200 */
+  border-radius: 0.375rem;
+}
+
+/* Repository Name */
+.repository-name {
+  font-size: 1.125rem;
+  font-weight: 500;
+}
+
+.repository-details {
+  font-size: 0.875rem;
+  color: #6b7280; /* Tailwind gray-500 */
+}
+
+/* Badges */
+.repository-badge {
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.375rem;
+  font-size: 0.75rem;
+  text-align: center;
+}
+
+.badge-public {
+  background-color: #dbeafe; /* Tailwind blue-100 */
+  color: #2563eb; /* Tailwind blue-600 */
+}
+
+.badge-private {
+  background-color: #f3f4f6; /* Tailwind gray-100 */
+  color: #4b5563; /* Tailwind gray-600 */
+}
+/* Header Section */
+.repository-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.add-repository-button {
+  padding: 0.5rem 1rem;
+  background-color: #2563eb; /* Tailwind blue-600 */
+  color: white;
+  border: none;
+  border-radius: 0.375rem;
+  cursor: pointer;
+}
+
+.add-repository-button:hover {
+  background-color: #1d4ed8; /* Tailwind blue-700 */
+}
+
+.btn-refresh {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem; /* Space between the icon and text */
+  padding: 0.5rem 1rem; /* Padding inside the button */
+  border: 1px solid #d1d5db; /* Tailwind gray-300 */
+  border-radius: 0.375rem; /* Rounded corners */
+  background-color: white; /* White background */
+  color: #374151; /* Tailwind gray-700 for text */
+  font-size: 1rem; /* Font size */
+  font-weight: 500; /* Slightly bold text */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.2s, border-color 0.2s, box-shadow 0.2s; /* Smooth transitions */
+}
+
+.btn-refresh:hover {
+  background-color: #f9fafb; /* Slightly darker background on hover */
+  border-color: #9ca3af; /* Tailwind gray-400 for hover border */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+}
+
+.btn-refresh:focus {
+  outline: 2px solid #60a5fa; /* Tailwind blue-400 for focus outline */
+  outline-offset: 2px;
+}
+
+.btn-refresh:active {
+  background-color: #f3f4f6; /* Darker background for active state */
+  border-color: #6b7280; /* Tailwind gray-500 for active border */
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1); /* Inset shadow for active state */
+}
+
+.btn-icon {
+  font-size: 1.2rem; /* Slightly larger icon size */
+  color: #6b7280; /* Tailwind gray-500 for icon */
+}

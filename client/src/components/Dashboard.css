@@ -1,0 +1,11 @@
+.dashboard-container {
+  display: flex;
+  height: 100vh;
+  background-color: #f9fafb; /* Tailwind gray-50 */
+}
+
+.dashboard-content {
+  flex: 1;
+  padding: 1rem;
+  overflow-y: auto;
+}
