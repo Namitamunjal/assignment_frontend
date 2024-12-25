@@ -1,3 +1,19 @@
+/* Remove Scrollbar for the entire page */
+body {
+  overflow: hidden; /* Disables scrolling */
+}
+
+/* Optional: If you want to hide the scrollbar but keep scrolling functionality */
+body::-webkit-scrollbar {
+  width: 0;
+}
+
+body {
+  -ms-overflow-style: none; /* For Internet Explorer and Edge */
+  scrollbar-width: none; /* For Firefox */
+}
+
+
 .dashboard-container {
   display: flex;
   height: 100vh;

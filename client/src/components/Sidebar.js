@@ -1,6 +1,9 @@
 import React from "react";
 import { Icon } from "@iconify/react";
 import "./Sidebar.css";
+import logo from "../assets/Picture1.png"
+import { FaBook } from "react-icons/fa6";
+import { NavLink } from "react-router-dom";
 
 const Sidebar = () => {
   return (
@@ -8,6 +11,7 @@ const Sidebar = () => {
       {/* Logo Section */}
       <div className="sidebar-logo">
         <Icon icon="mdi:ant-outline" className="sidebar-icon" />
+        <img src={logo} alt="logo" style={{ height: '50px' }} />
         <span className="sidebar-title">CodeAnt AI</span>
       </div>
 
@@ -24,27 +28,60 @@ const Sidebar = () => {
 
       {/* Navigation Section */}
       <nav className="sidebar-nav">
-        <a href="/" className="nav-link nav-active">
-          <Icon icon="mdi:home-outline" className="nav-icon" />
-          <span>Repositories</span>
-        </a>
-        <a href="/code-review" className="nav-link">
-          <Icon icon="mdi:code-braces" className="nav-icon" />
-          <span>AI Code Review</span>
-        </a>
-        <a href="/cloud-security" className="nav-link">
-          <Icon icon="mdi:cloud-outline" className="nav-icon" />
-          <span>Cloud Security</span>
-        </a>
-        <a href="/how-to-use" className="nav-link">
-          <Icon icon="mdi:help-circle-outline" className="nav-icon" />
-          <span>How to Use</span>
-        </a>
-        <a href="/settings" className="nav-link">
-          <Icon icon="mdi:cog-outline" className="nav-icon" />
-          <span>Settings</span>
-        </a>
-      </nav>
+      <NavLink
+        to="/"
+        className={({ isActive }) =>
+          isActive ? "nav-link nav-active" : "nav-link"
+        }
+      >
+        <Icon icon="mdi:home-outline" className="nav-icon" />
+        <span>Repositories</span>
+      </NavLink>
+
+      <NavLink
+        to="/code-review"
+        className={({ isActive }) =>
+          isActive ? "nav-link nav-active" : "nav-link"
+        }
+      >
+        <Icon
+          icon="material-symbols:code"
+          className="nav-icon"
+          style={{ fontSize: "24px" }}
+        />
+        <span>AI Code Review</span>
+      </NavLink>
+
+      <NavLink
+        to="/cloud-security"
+        className={({ isActive }) =>
+          isActive ? "nav-link nav-active" : "nav-link"
+        }
+      >
+        <Icon icon="mdi:cloud-outline" className="nav-icon" />
+        <span>Cloud Security</span>
+      </NavLink>
+
+      <NavLink
+        to="/how-to-use"
+        className={({ isActive }) =>
+          isActive ? "nav-link nav-active" : "nav-link"
+        }
+      >
+        <FaBook />
+        <span>How to Use</span>
+      </NavLink>
+
+      <NavLink
+        to="/settings"
+        className={({ isActive }) =>
+          isActive ? "nav-link nav-active" : "nav-link"
+        }
+      >
+        <Icon icon="mdi:cog-outline" className="nav-icon" />
+        <span>Settings</span>
+      </NavLink>
+    </nav>
 
       {/* Bottom Section */}
       <div className="sidebar-bottom">

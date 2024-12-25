@@ -1,6 +1,7 @@
 import React from "react";
 import "./RepositoryList.css";
 import { Icon } from "@iconify/react";
+import { LuRefreshCcw } from "react-icons/lu";
 
 const repositories = [
   { name: "design-system", type: "Public", language: "React", size: "7320 KB", updated: "1 day ago" },
@@ -21,7 +22,8 @@ const RepositoryList = () => {
       <div className="repository-header">
         <h1 className="repository-title">Repositories</h1>
         <button className="btn-refresh" onClick={handleRefresh}>
-          <Icon icon="mdi:refresh" className="btn-icon" /> Refresh All
+        <LuRefreshCcw />
+        Refresh All
         </button>       <button className="add-repository-button">+ Add Repository</button>
       </div>
       <p className="repository-count">{repositories.length} total repositories</p>
