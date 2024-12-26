@@ -2,6 +2,8 @@ import React from "react";
 import "./RepositoryList.css";
 import { Icon } from "@iconify/react";
 import { LuRefreshCcw } from "react-icons/lu";
+import { IoIosSearch } from "react-icons/io";
+import { HiOutlineCircleStack } from "react-icons/hi2";
 
 const repositories = [
   { name: "design-system", type: "Public", language: "React", size: "7320 KB", updated: "1 day ago" },
@@ -22,34 +24,49 @@ const RepositoryList = () => {
       <div className="repository-header">
         <h1 className="repository-title">Repositories</h1>
         <button className="btn-refresh" onClick={handleRefresh}>
-        <LuRefreshCcw />
-        Refresh All
-        </button>       <button className="add-repository-button">+ Add Repository</button>
+          <LuRefreshCcw />
+          Refresh All
+        </button>
+
+        <button className="add-repository-button">+ Add Repository</button>
       </div>
       <p className="repository-count">{repositories.length} total repositories</p>
-      <input
-        type="text"
-        placeholder="Search Repositories"
-        className="repository-search"
-      />
+      <div className="search-container">
+        <IoIosSearch className="search-icon" />
+        <input
+          type="text"
+          placeholder="Search Repositories"
+          className="repository-search"
+        />
+      </div>
+
       <div className="repository-list">
         {repositories.map((repo, index) => (
           <div key={index} className="repository-item">
             <div>
+              <div className="forflex">
               <h2 className="repository-name">{repo.name}</h2>
+              <span
+                className={`repository-badge ${repo.type === "Public" ? "badge-public" : "badge-private"
+                  }`}
+              >
+                {repo.type}
+              </span>
+              </div>
+              
               <p className="repository-details">
-                {repo.language} • {repo.size} • Updated {repo.updated}
+                {repo.language}
+                <span className="blue-dot"></span>
+                {repo.size}
+                <HiOutlineCircleStack className="size-icon" />
+                Updated {repo.updated}
               </p>
             </div>
-            <span
-              className={`repository-badge ${repo.type === "Public" ? "badge-public" : "badge-private"
-                }`}
-            >
-              {repo.type}
-            </span>
+
           </div>
         ))}
       </div>
+
     </div>
   );
 };

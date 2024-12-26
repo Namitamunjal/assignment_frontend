@@ -21,6 +21,7 @@ body {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   font-family: 'Inter', sans-serif;
   overflow-y: hidden;
+  
 }
 .repository-list-container {
   -ms-overflow-style: none; /* For Internet Explorer and Edge */
@@ -33,9 +34,9 @@ body {
 
 /* Title and Count */
 .repository-title {
-  font-size: 1.5rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
+  font-size: 1.7 rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
 }
 
 .repository-count {
@@ -45,19 +46,42 @@ body {
 }
 
 /* Search Input */
+.search-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 25%; /* Adjust width as needed */
+  box-shadow: 1px #6b7280;
+}
+
+.search-icon {
+  position: absolute;
+  left: 0.75rem; /* Adjust spacing as needed */
+  color: #6b7280; /* Tailwind gray-500 */
+  font-size: 1.2rem; /* Adjust icon size as needed */
+}
+
 .repository-search {
-  width: 100%;
-  padding: 0.5rem;
+  padding: 0.5rem 0.75rem 0.5rem 2.5rem; /* Add left padding to accommodate the icon */
   border: 1px solid #d1d5db; /* Tailwind gray-300 */
   border-radius: 0.375rem;
-  margin-bottom: 1.5rem;
+  width: 100%; /* Full width */
+  outline: none;
+  font-size: 1rem;
+  transition: border-color 0.2s;
+  
 }
+
+.repository-search:focus {
+  border-color: #2563eb; /* Tailwind blue-600 for focus */
+}
+
 
 /* Repository List */
 .repository-list {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  margin-top: 20px;
 }
 
 /* Repository Item */
@@ -66,39 +90,50 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
-  background-color: #f9fafb; /* Tailwind gray-50 */
   border: 1px solid #e5e7eb; /* Tailwind gray-200 */
-  border-radius: 0.375rem;
+  /* border-radius: 0.375rem; */
 }
-
+.repository-item:hover
+{
+  background-color: #f9fafb; /* Tailwind gray-50 */
+  cursor:pointer;
+}
 /* Repository Name */
 .repository-name {
-  font-size: 1.125rem;
+  font-size: 1.145rem;
   font-weight: 500;
 }
 
 .repository-details {
-  font-size: 0.875rem;
-  color: #6b7280; /* Tailwind gray-500 */
+  font-size: 0.975rem;
+  color: #000; /* Tailwind gray-500 */
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 /* Badges */
 .repository-badge {
   padding: 0.25rem 0.5rem;
-  border-radius: 0.375rem;
+  border-radius: 9999px;;
   font-size: 0.75rem;
   text-align: center;
-}
-
-.badge-public {
+  height: 20px;
+  margin: 12px;
   background-color: #dbeafe; /* Tailwind blue-100 */
   color: #2563eb; /* Tailwind blue-600 */
+  border: 1px solid #2563eb;
+}
+
+/* .badge-public {
+  background-color: #dbeafe; 
+  color: #2563eb; 
 }
 
 .badge-private {
-  background-color: #f3f4f6; /* Tailwind gray-100 */
-  color: #4b5563; /* Tailwind gray-600 */
-}
+  background-color: #f3f4f6; 
+} */
+
 /* Header Section */
 .repository-header {
   display: flex;
@@ -108,13 +143,17 @@ body {
 }
 
 .add-repository-button {
-  padding: 0.5rem 1rem;
+  padding: 0.7rem 1rem;
   background-color: #2563eb; /* Tailwind blue-600 */
   color: white;
   border: none;
   border-radius: 0.375rem;
   cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Gray box shadow */
+  transition: transform 0.2s; /* Smooth transition for any movement */
 }
+
+
 
 .add-repository-button:hover {
   background-color: #1d4ed8; /* Tailwind blue-700 */
@@ -124,7 +163,7 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem; /* Space between the icon and text */
-  padding: 0.5rem 1rem; /* Padding inside the button */
+  padding: 0.7rem 1rem; /* Padding inside the button */
   border: 1px solid #d1d5db; /* Tailwind gray-300 */
   border-radius: 0.375rem; /* Rounded corners */
   background-color: white; /* White background */
@@ -133,6 +172,8 @@ body {
   font-weight: 500; /* Slightly bold text */
   cursor: pointer; /* Pointer cursor on hover */
   transition: background-color 0.2s, border-color 0.2s, box-shadow 0.2s; /* Smooth transitions */
+  /* margin-left: 650px; */
+  margin-right: -680px;
 }
 
 .btn-refresh:hover {
@@ -155,4 +196,25 @@ body {
 .btn-icon {
   font-size: 1.2rem; /* Slightly larger icon size */
   color: #6b7280; /* Tailwind gray-500 for icon */
+}
+
+.blue-dot {
+  display: inline-block;
+  width: 0.5rem; /* Adjust size as needed */
+  height: 0.5rem; /* Adjust size as needed */
+  background-color: #2563eb; /* Tailwind blue-600 */
+  border-radius: 50%; /* Makes it a circle */
+  /* margin: 0 0.3rem; */
+}
+
+.size-icon {
+  margin-left: 0.3rem; 
+  color: #6b7280;
+  font-size: 1rem; 
+  display: inline-block;
+
+}
+
+.forflex{
+  display: flex;
 }
