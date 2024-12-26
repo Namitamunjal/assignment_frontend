@@ -16,12 +16,68 @@ body {
 
 .dashboard-container {
   display: flex;
+  flex-direction: row;
   height: 100vh;
-  background-color: #f9fafb; /* Tailwind gray-50 */
+  position: relative;
 }
 
 .dashboard-content {
-  flex: 1;
-  padding: 0.5rem;
+  flex: 1; /* Allow the content to take the remaining space */
+  margin-left: 0; /* Start with no margin */
+  width: 100%;
   overflow-y: auto;
+  transition: filter 0.3s ease; /* For blur effect */
+}
+
+.dashboard-content.blurred {
+  filter: blur(4px); /* Apply blur only when the sidebar is open in mobile view */
+  pointer-events: none; /* Disable interactions with blurred content */
+}
+.sidebar-container.closed ~ .dashboard-content {
+  filter: none;
+  pointer-events: auto;
+}
+
+/* Sidebar styles */
+/* .sidebar-container {
+  width: 250px; 
+  height: 100%;
+  background: #f4f4f4; 
+  position: relative;
+  z-index: 10;
+  transition: transform 0.3s ease;
+} */
+
+/* Hamburger menu for small screens */
+.hamburger-menu {
+  display: none; /* Hidden by default */
+  position: fixed;
+  top: 1rem;
+  right: 2rem;
+  z-index: 20;
+  font-size: 1.8rem;
+  background: none;
+  border: none;
+  color: #333;
+  cursor: pointer;
+}
+
+
+/* Adjustments for mobile view */
+@media (max-width: 768px) {
+  .hamburger-menu {
+    display: block; /* Show the hamburger menu */
+    z-index: 20;
+  }
+
+  .dashboard-content {
+    margin-left: 0; /* Sidebar is not considered in mobile view */
+    width: 100%; /* Content takes full width */
+  }
+}
+
+/* Adjustments for normal view */ 
+@media (min-width: 769px) {
+  .dashboard-content {
+    margin-left: 250px;  }
 }

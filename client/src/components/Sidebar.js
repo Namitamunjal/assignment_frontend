@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Icon } from "@iconify/react";
 import "./Sidebar.css";
 import logo from "../assets/Picture1.png"
@@ -6,8 +6,13 @@ import { FaBook } from "react-icons/fa6";
 import { NavLink } from "react-router-dom";
 
 const Sidebar = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(true); // State to control the hamburger menu
+
+  const handleLinkClick = () => {
+    setIsMenuOpen(false); // Close the menu when a link is clicked
+  };
   return (
-    <div className="sidebar-container">
+    <div className={`sidebar-container ${isMenuOpen ? "open" : "closed"}`}>
       {/* Logo Section */}
       <div className="sidebar-logo">
         <Icon icon="mdi:ant-outline" className="sidebar-icon" />
@@ -30,6 +35,7 @@ const Sidebar = () => {
       <nav className="sidebar-nav">
       <NavLink
         to="/"
+        onClick={handleLinkClick}
         className={({ isActive }) =>
           isActive ? "nav-link nav-active" : "nav-link"
         }
@@ -40,6 +46,7 @@ const Sidebar = () => {
 
       <NavLink
         to="/code-review"
+        onClick={handleLinkClick}
         className={({ isActive }) =>
           isActive ? "nav-link nav-active" : "nav-link"
         }
@@ -54,6 +61,7 @@ const Sidebar = () => {
 
       <NavLink
         to="/cloud-security"
+        onClick={handleLinkClick}
         className={({ isActive }) =>
           isActive ? "nav-link nav-active" : "nav-link"
         }
@@ -64,6 +72,7 @@ const Sidebar = () => {
 
       <NavLink
         to="/how-to-use"
+        onClick={handleLinkClick}
         className={({ isActive }) =>
           isActive ? "nav-link nav-active" : "nav-link"
         }
@@ -74,6 +83,7 @@ const Sidebar = () => {
 
       <NavLink
         to="/settings"
+        onClick={handleLinkClick}
         className={({ isActive }) =>
           isActive ? "nav-link nav-active" : "nav-link"
         }
@@ -85,11 +95,11 @@ const Sidebar = () => {
 
       {/* Bottom Section */}
       <div className="sidebar-bottom">
-        <a href="/support" className="nav-link">
+        <a href="/support"  onClick={handleLinkClick} className="nav-link">
           <Icon icon="mdi:phone-outline" className="nav-icon" />
           <span>Support</span>
         </a>
-        <a href="/logout" className="nav-link">
+        <a href="/logout"  onClick={handleLinkClick} className="nav-link">
           <Icon icon="mdi:logout" className="nav-icon" />
           <span>Logout</span>
         </a>

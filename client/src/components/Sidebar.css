@@ -1,15 +1,28 @@
 /* Sidebar Container */
 .sidebar-container {
   height: 100%;
-  width: 16rem; /* 64 (in Tailwind's scale) */
-  background-color: white;
-  border-right: 1px solid #e5e7eb; /* Tailwind gray-200 */
+  width: 16rem;
+  border-right: 1px solid #e5e7eb;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
   font-family: 'Inter', sans-serif;
-
+  width: 250px;
+  background-color: #f8f9fa;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow-y: auto;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  transition: width 0.3s ease, height 0.3s ease;
 }
+
+.sidebar-container.hidden {
+  transform: translateX(-100%);
+}
+
+
 
 /* Logo Section */
 .sidebar-logo {
@@ -69,8 +82,8 @@
 
 /* Active Link */
 .nav-active {
-  background-color: #2563eb; /* Tailwind blue-100 */
-  color: #fff; /* Tailwind blue-800 */
+  background-color: #2563eb; 
+  color: #fff; 
 }
 
 /* Navigation Icons */
@@ -87,4 +100,25 @@
   flex-direction: column;
   gap: 1rem; /* Space between links */
   font-weight: bold;
+}
+
+/* For smaller screens */
+@media (max-width: 768px) {
+  .sidebar-container {
+    width: 100%;
+    height: auto;
+    justify-content: center;
+  }
+  .nav-active, .nav-link {
+    background-color: transparent; /* Correct value */
+    color: #4b5563;
+  }
+}
+
+.sidebar-container.open {
+  transform: translateX(0); /* Sidebar visible */
+}
+
+.sidebar-container.closed {
+  transform: translateX(-100%); /* Sidebar hidden */
 }

@@ -159,6 +159,12 @@ body {
   background-color: #1d4ed8; /* Tailwind blue-700 */
 }
 
+.flexxing{
+  display: flex;
+  justify-content: space-between;
+}
+
+
 .btn-refresh {
   display: inline-flex;
   align-items: center;
@@ -173,7 +179,7 @@ body {
   cursor: pointer; /* Pointer cursor on hover */
   transition: background-color 0.2s, border-color 0.2s, box-shadow 0.2s; /* Smooth transitions */
   /* margin-left: 650px; */
-  margin-right: -680px;
+  /* margin-right: -680px; */
 }
 
 .btn-refresh:hover {

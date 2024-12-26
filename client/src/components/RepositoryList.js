@@ -23,12 +23,16 @@ const RepositoryList = () => {
     <div className="repository-list-container">
       <div className="repository-header">
         <h1 className="repository-title">Repositories</h1>
-        <button className="btn-refresh" onClick={handleRefresh}>
-          <LuRefreshCcw />
-          Refresh All
-        </button>
+        <div className="flexing">
+          <button className="btn-refresh" onClick={handleRefresh}>
+            <LuRefreshCcw />
+            Refresh All
+          </button>
 
-        <button className="add-repository-button">+ Add Repository</button>
+          <button className="add-repository-button">+ Add Repository</button>
+
+        </div>
+
       </div>
       <p className="repository-count">{repositories.length} total repositories</p>
       <div className="search-container">
@@ -45,15 +49,15 @@ const RepositoryList = () => {
           <div key={index} className="repository-item">
             <div>
               <div className="forflex">
-              <h2 className="repository-name">{repo.name}</h2>
-              <span
-                className={`repository-badge ${repo.type === "Public" ? "badge-public" : "badge-private"
-                  }`}
-              >
-                {repo.type}
-              </span>
+                <h2 className="repository-name">{repo.name}</h2>
+                <span
+                  className={`repository-badge ${repo.type === "Public" ? "badge-public" : "badge-private"
+                    }`}
+                >
+                  {repo.type}
+                </span>
               </div>
-              
+
               <p className="repository-details">
                 {repo.language}
                 <span className="blue-dot"></span>
