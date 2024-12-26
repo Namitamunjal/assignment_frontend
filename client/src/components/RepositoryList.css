@@ -138,8 +138,9 @@ body {
 .repository-header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  /* align-items: center; */
   margin-bottom: 1rem;
+  /* padding: 0 0rem; */
 }
 
 .add-repository-button {
@@ -150,7 +151,7 @@ body {
   border-radius: 0.375rem;
   cursor: pointer;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Gray box shadow */
-  transition: transform 0.2s; /* Smooth transition for any movement */
+  transition: background-color 0.2s; /* Smooth transition for any movement */
 }
 
 
@@ -159,9 +160,10 @@ body {
   background-color: #1d4ed8; /* Tailwind blue-700 */
 }
 
-.flexxing{
+.flexing{
   display: flex;
-  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
 }
 
 
@@ -223,4 +225,23 @@ body {
 
 .forflex{
   display: flex;
+}
+
+@media (max-width: 768px) {
+  .repository-header {
+    flex-direction: column; 
+    text-align: start;  }
+
+  .flexing {
+    flex-direction: row; 
+    gap: 10px; 
+    margin-top: 1rem;
+    justify-content: flex-start; 
+  }
+
+
+  .btn-refresh, .add-repository-button {
+    width: auto; 
+    margin-left: 0; 
+  }
 }
